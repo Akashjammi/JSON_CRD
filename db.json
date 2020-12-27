@@ -1,8 +1,1 @@
-{
-  "class": "BTECH",
-  "asas": "Aassa",
-  "jj": { "amas": "aa" },
-  "aa": { "timeToLive": 10, "expiryTime": "2020-12-27T11:35:27.131Z" },
-  "ab": { "timeToLive": 100, "expiryTime": "2020-12-27T11:38:17.648Z" },
-  "aansjas": { "timeToLive": 20, "expiryTime": "2020-12-27T11:47:19.818Z" }
-}
+{"class":"BTECH","asas":"Aassa","jj":{"amas":"aa"},"aa":{"timeToLive":10,"expiryTime":"2020-12-27T11:35:27.131Z"},"ab":{"timeToLive":100,"expiryTime":"2020-12-27T11:38:17.648Z"},"aansjas":{"timeToLive":20,"expiryTime":"2020-12-27T11:47:19.818Z"},"filepath":{"path":"../"}}

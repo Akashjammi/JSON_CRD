@@ -4,11 +4,14 @@ const fs = require('fs');
 
 module.exports = (app)=>{
 app.use(express.json());   
-app.post('/create',(req,res)=>{
+app.post('/create',async (req,res)=>{
     if(Buffer.from(JSON.stringify(db)).length >1000000000){
         res.send('Database is full,please delete before insert');
     }else{
     const json = req.body;
+    if(json.filepath && json.filepath.path){
+        db = await require(json.filepath.path);
+    }
     console.log(`Insert Key ${JSON.stringify(json)}`);
     const keysAlready = [];
     const keysAdded = [];
@@ -52,8 +55,11 @@ app.post('/create',(req,res)=>{
 });
 
 
-app.post('/read',(req,res)=>{
+app.post('/read',async (req,res)=>{
     const keys = req.body.keys.split(',');
+    if(json.filepath && json.filepath.path){
+        db = await require(json.filepath.path);
+    }
     let resJson = {};
     keys.forEach(element => {
         if(db[element].expiryTime 
@@ -70,8 +76,11 @@ app.post('/read',(req,res)=>{
 });
 
 
-app.post('/delete',(req,res)=>{
+app.post('/delete',async (req,res)=>{
     const keys = req.body.keys.split(',');
+    if(json.filepath && json.filepath.path){
+        db = await require(json.filepath.path);
+    }
     
     keys.forEach(element => {
 
