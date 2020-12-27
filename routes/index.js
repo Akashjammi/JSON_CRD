@@ -57,8 +57,8 @@ app.post('/create',async (req,res)=>{
 
 app.post('/read',async (req,res)=>{
     const keys = req.body.keys.split(',');
-    if(json.filepath && json.filepath.path){
-        db = await require(json.filepath.path);
+    if(req.body.filepath && req.body.filepath.path){
+        db = await require(req.body.filepath.path);
     }
     let resJson = {};
     keys.forEach(element => {
@@ -78,8 +78,8 @@ app.post('/read',async (req,res)=>{
 
 app.post('/delete',async (req,res)=>{
     const keys = req.body.keys.split(',');
-    if(json.filepath && json.filepath.path){
-        db = await require(json.filepath.path);
+    if(req.body.filepath && req.body.filepath.path){
+        db = await require(req.body.filepath.path);
     }
     
     keys.forEach(element => {
